@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "name": "kanban-node",
+  "description": "",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmit-s3712674-Sijie-Shi/kanban-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmit-s3712674-Sijie-Shi/kanban-node/issues"
+  },
+  "homepage": "https://github.com/rmit-s3712674-Sijie-Shi/kanban-node#readme",
+  "type": "module"
+}
