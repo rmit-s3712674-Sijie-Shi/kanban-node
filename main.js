@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { listUser, regitser, login } from './src/user.js';
+import { listUser, regitser, login, updatePassword } from './src/user.js';
 import { runDb } from './connnectDb.js';
 
 const PORT = 3001;
@@ -16,6 +16,7 @@ app.listen(PORT,() => {
 app.get("/listUser", listUser)
 app.post("/register", regitser)
 app.post("/login", login)
+app.post("/updatepassword", updatePassword)
 
 app.on('error', () => {
     console.error("something wrong")

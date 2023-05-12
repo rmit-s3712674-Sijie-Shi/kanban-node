@@ -41,6 +41,13 @@ export const login = async (request, response) => {
     })
 }
 
-export const updatePassword = async () => {
-    
+export const updatePassword = async (request, response) => {
+    await client.connect()
+    console.log(request.body)
+    const { email, password } = request.body
+    db.collection("user").findOne({email: email}).then((res) => {
+        if(res){
+            db.collection("user").updateOne({email : email}, {$set: {password: password}})
+        }
+    }).then(response.status(201).send("password update"))
 }
