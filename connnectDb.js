@@ -1,7 +1,7 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
 const url = 'mongodb+srv://leptin:000003@cluster0.dlqtqun.mongodb.net/?retryWrites=true&w=majority'
-const client = new MongoClient(url, {
+export const client = new MongoClient(url, {
     serverApi: {
       version: ServerApiVersion.v1,
       strict: true,
@@ -16,8 +16,8 @@ export async function runDb() {
       await client.connect();
       // Send a ping to confirm a successful connection
       await client.db("kanban").command({ ping: 1 });
-      let cole = await client.db("kanban").collection("user").findOne({email : "admin@admin.com"})
-      console.log(cole)
+      //let cole = await client.db("kanban").collection("user").findOne({email : "admin@admin.com"})
+      //console.log(cole)
       console.log("Pinged your deployment. You successfully connected to MongoDB!");
     } finally {
       // Ensures that the client will close when you finish/error
