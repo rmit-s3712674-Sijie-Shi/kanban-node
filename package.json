@@ -1,16 +1,22 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^5.5.0",
+    "mongoose": "^7.1.1",
+    "react-uuid": "^2.0.0"
   },
   "name": "kanban-node",
   "description": "",
   "version": "1.0.0",
   "main": "main.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js"
+    "start": "node main.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
