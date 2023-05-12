@@ -40,3 +40,7 @@ export const login = async (request, response) => {
         res.password === password ? response.status(201).json(res) : response.status(401).send("wrong credentials")
     })
 }
+
+export const updatePassword = async () => {
+    
+}

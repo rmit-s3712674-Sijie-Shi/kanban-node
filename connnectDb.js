@@ -1,6 +1,6 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
-
-const url = 'mongodb+srv://leptin:000003@cluster0.dlqtqun.mongodb.net/?retryWrites=true&w=majority'
+import * as env from "./environment.json" assert {type : "json"};
+const url = env.default.mongo
 export const client = new MongoClient(url, {
     serverApi: {
       version: ServerApiVersion.v1,
