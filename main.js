@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { listUser, regitser, login, updatePassword } from './src/user.js';
-import { getAllProject } from './src/tasks.js'
+import { getAllProject, addTask } from './src/tasks.js'
 import { runDb } from './connnectDb.js';
 
 const PORT = 3001;
@@ -20,6 +20,8 @@ app.post("/login", login)
 app.post("/updatepassword", updatePassword)
 
 app.post("/getprojects", getAllProject)
+app.post("/addtask", addTask)
+
 
 app.on('error', () => {
     console.error("something wrong")
