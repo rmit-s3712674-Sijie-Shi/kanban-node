@@ -28,6 +28,15 @@ export const addTask = async (request, response) => {
     })
 }
 
+export const addProject = async (request, response) => {
+    await client.connect()
+    console.log(request.body)
+    const { email, projectTitle } = request.body
+    db.collection("tasks").findOneAndUpdate({email: email},{$push: {project : {projectId: uuid(), title: projectTitle, projects:{}}}}, {upsert: true}).then(res => {
+        response.status(201).json(res)
+    }).catch(console.error)
+}
+
 // {
 //     _id: new ObjectId("645df31c7102daf7f0dc32fa"),
 //     email: 'rikusrocks@gmail.com',
