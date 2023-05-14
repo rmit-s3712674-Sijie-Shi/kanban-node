@@ -7,7 +7,7 @@ export const getAllProject = async (request, response) => {
     const { email } = request.body
     db.collection("tasks").findOne({email: email}).then((res) => {
         console.log(res)
-        response.status(201).json(res.project)
+        response.status(200).json(res.project)
     }).catch(console.error)
 }
 
@@ -15,7 +15,7 @@ export const getAlltask = async (request, response) => {
     await client.connect()
     console.log(request.body)
     const { email, projectTitle } = request.body
-    db.collection("tasks").findOne({project: projectTitle})
+    db.collection("tasks").findOne({project: projectTitle}).then(res => response.status(200).json(res))
 }
 
 export const addTask = async (request, response) => {
